@@ -1,9 +1,34 @@
 
-# se busca hacer un programa que cree una combinacion de 6 digitos con 
-# letras y numeros para luego un programa genere la buyqueda que se 
-# resquiere y puedas seguir buscando 
-# mejorar la descripcion esta un poco chueca
+# Creado por : Richard Armando Rivero Ramirez
+# Venezuela
 
+# se busca hacer un programa que cree una combinacion de 6 digitos con 
+# letras y numeros , se usara para buscar la clave o claves correcta
+# de una lista de claves que no se conocen.
+#---------------------------------------------------------------------------
+# se suministra una Variable Diccionario que contiene tanto letras como Numeros 
+# pero puede ser modificado para albergar nuevos signos o simbolos 
+# El diccionario suministrado es 'miDiccionario'
+# Es importante saber que se juega es con la posicion o key del 
+# diccionario principal, estos es lo que nos permite cambiar letras a 
+# numero y viceverza.
+# ------------------------------------------------------------------------- 
+# Todos los metodos por lo general funcionan o generan listas de 6 posiciones 
+# -------------------------------------------------------------------------
+# Metodo 'creaCombinacion' nos permites ir haciendo una generacion de codigo
+# de forma progresiva desde el punto donde lo iniciemos 
+# ejemplo lista [0,0,0,0,0,0], next[0,0,0,0,0,1],next[0,0,0,0,0,2]
+# next[0,0,0,0,0,3],......................... next[0,0,0,0,0,36]
+# next[0,0,0,0,1,36] ------------------------ next[36,36,36,36,36,36] fin,
+# o si generan una lista nueva prinipal deben coinsidir las posiciones
+# de diccionario.key, este metodo es el mas importante devido a que va
+# generando las combinaciones de forma asendente desde el punto donde lo 
+# iniciemos.
+#
+# ----------------------------------------------------------------------
+# Mejoras : proximo mejoras 
+# importar diccionarios nuevos o seleccionar diccionarios particulares
+# variabilidad de la longitud de el codifo 
 # diccionario con todo los numeros y letras para hacer combinaciones 
 
 miDiccionario = {0:"0",1:"1",2:"2",3:"3",4:"4",5:"5",6:"6",7:"7",8:"8",9:"9",10:"a",11:"b",12:"c",
@@ -25,15 +50,16 @@ class principio():
     
     def __init__(self,):  # contructor iniciador 
         self.miListaXD = [] # lista inicial de llenado
-        self.posLista = 1
-        self.DicX = len(miDiccionario)
+        self.posLista = 1 # inicializador de la lista
+        self.DicX = len(miDiccionario) # Dimencion de la lista principal con la que se compara
+        self.NumPosiciones = 7 # Numero de posiciones de llenado de la lista a comparar
         print("Introduce los 6 caracteres para iniciar")
         print("se deben introducir Letras y numeros , no mayusculas ni caracteres epeciales")
 
     def llenadoDeLista(self):
-        """Este metodo nos pide el ingreso de 6 caracteres para llenar una lista
+        """Este metodo pide el ingreso de 6 caracteres para llenar una lista
             regresa una lista de 6 caracteres en STR"""  
-        while (self.posLista < 7): 
+        while (self.posLista < self.NumPosiciones): 
             self.miListaXD.append(input("introduce el caracter {} : ".format (self.posLista)))
             self.posLista += 1 # contador
         return self.miListaXD
@@ -96,7 +122,7 @@ listaejemplo = [22,24,14,10,30,18]
 listaejemplo2 =['m','ñ','e','a','t','i']
 print(iniciar.decoder_a_Letras(listaejemplo))
 print(iniciar.decorder_a_Numero(listaejemplo2))
-
+print(iniciar.llenadoDeLista())
 """
 print(iniciar.llenadoDeLista())
 listaobtenida=iniciar.llenadoDeLista()
