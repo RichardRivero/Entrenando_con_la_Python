@@ -10,8 +10,6 @@ miDiccionario = {0:"0",1:"1",2:"2",3:"3",4:"4",5:"5",6:"6",7:"7",8:"8",9:"9",10:
 13:"d",14:"e",15:"f",16:"g",17:"h",18:"i",19:"j",20:"k",21:"l",22:"m",23:"n",24:"ñ",25:"o",26:"p",
 27:"q",28:"r",29:"s",30:"t",31:"u",32:"v",33:"w",34:"x",35:"y",36:"z"}
 
- # Tamaño del diccionario 
-
 
 """
 buscando=True
@@ -58,46 +56,67 @@ class principio():
                             for valor6 in range(self.posi6,self.DicX):
                                 codigo = [valor1,valor2,valor3,valor4,valor5,valor6] # concatena el valor de el bucle
                                 yield codigo # retorna el resultado del bucle 
+                                #return codigo ## Hay que revisar si el return funciona
 
-    def decorderNumero(self,mi_listaprueba):
-        """Metodo que compara 2 listas y regresa la Key posicion del diccionario principal con el que ingresaron"""
+    def decorder_a_Numero(self,ListaADecodificar):
+        """Metodo que compara 2 listas y regresa la Key.posicion del diccionario 
+        principal con el que ingresaron"""
 
         self.listaNumero=[]
         self.recorrido=0
         while self.recorrido < 7: 
             
-            for num1 in range(len(mi_listaprueba)):
+            for num1 in range(len(ListaADecodificar)):
                 for num2 in range(len(miDiccionario)):
                     self.recorrido +=1
-                    if mi_listaprueba[num1] == miDiccionario[num2]:
+                    if ListaADecodificar[num1] == miDiccionario[num2]:
                         self.listaNumero.append(num2)
         
-        return self.listaNumero # regresa una lista con las posiciones de las casillas del diccionario principal
+        return self.listaNumero # regresa una lista con las posiciones de 
+        #las casillas del diccionario principal
 
-    def decoderLetras(self,listaDecodificar):
+    def decoder_a_Letras(self,listaDecodificar):
         """Metodo que retorna el orden en letras de una lista ordenado por numeros  """
         self.listaDecodificar = listaDecodificar
         self.listaLetra=[]
 
-        for buscaValor in listaDecodificar: # de numero a letras
-            valorDecodificado= miDiccionario[buscaValor]
+        for i in listaDecodificar: # de numero a letras
+            valorDecodificado = miDiccionario[i]
             self.listaLetra.append(valorDecodificado)
     
-        return self.listaLetra # retorna los valores a letras del diccionario 
+        return self.listaLetra # retorna los valores a letras del diccionario principal 
 
 #------------------------------------------------------------------------------------------
 
 
+
 iniciar = principio()
 
+listaejemplo = [22,24,14,10,30,18]
+listaejemplo2 =['m','ñ','e','a','t','i']
+print(iniciar.decoder_a_Letras(listaejemplo))
+print(iniciar.decorder_a_Numero(listaejemplo2))
+
+"""
 print(iniciar.llenadoDeLista())
 listaobtenida=iniciar.llenadoDeLista()
 #print(iniciar.decorderNumero(listaobtenida))
 listaobtenidaNumeros=iniciar.decorderNumero(listaobtenida)
 generadorCodigo=iniciar.crearCombinacion(listaobtenidaNumeros)
-print(next(generadorCodigo))
-print(next(generadorCodigo))
-print(next(generadorCodigo))
-print(next(generadorCodigo))
-print(next(generadorCodigo))
-print(iniciar.decoderLetras(next(generadorCodigo))
+#print(next(generadorCodigo))
+
+mama=iniciar.decoderLetras(generadorCodigo)
+print(mama)
+#print(next(generadorCodigo))
+#print(next(generadorCodigo))
+#print(next(generadorCodigo))
+#print(next(generadorCodigo))
+#print(next(generadorCodigo))
+#print(next(generadorCodigo))
+#print(next(generadorCodigo))
+#print(next(generadorCodigo))
+
+#Nota : Revisar el generador y el ultimo metodo .. no me funciona , 
+# da un error devido al generador y no continua 
+# aL parecer todo lo demas esta bien por los momentos
+"""
