@@ -35,17 +35,6 @@ miDiccionario = {0:"0",1:"1",2:"2",3:"3",4:"4",5:"5",6:"6",7:"7",8:"8",9:"9",10:
 13:"d",14:"e",15:"f",16:"g",17:"h",18:"i",19:"j",20:"k",21:"l",22:"m",23:"n",24:"ñ",25:"o",26:"p",
 27:"q",28:"r",29:"s",30:"t",31:"u",32:"v",33:"w",34:"x",35:"y",36:"z"}
 
-
-"""
-buscando=True
-while buscando:
-
-def terminar():  # llamada para terminar el bucle    
-    buscando = False
-    return buscando
-"""
-
-
 class principio():
     
     def __init__(self,):  # contructor iniciador 
@@ -66,11 +55,15 @@ class principio():
     
     def crearCombinacion(self,patronInicio): 
     
-        """ Funcion que genera combinacion de numeros se debe introducir un
-        argumento tipo lista, tupla o diccionario de 6 posiciones
-        ejemplo : patronInicio = [0,0,0,0,0,0]
-        este argumento es la posicion de inicio del ciclo for 
+        """ Funcion que genera combinacion de numeros
+        Se debe introducir un argumento tipo lista o tupla,
+        esta tupla o lista debe ser de 6 elementos de tipo int
+        ejemplo : patronInicio = [2,3,14,22,34,0]
+        dependiendo de nuestra variable DicX = tamaño de lista
+        los valores que introduscamos nos dara el punto de PARTIDA 
+        de nuetro ciclo el cual es de forma porgresiva creciente         
         Es una funcion generadora , para cada llamada se requier anteponer un next"""
+        
         self.listaEmpezar = patronInicio
         self.posi1,self.posi2,self.posi3,self.posi4,self.posi5,self.posi6 = self.listaEmpezar # asignacion multiple
 
