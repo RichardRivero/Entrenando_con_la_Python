@@ -1,0 +1,29 @@
+
+
+en un archivo se tienen almacenados varios codigos Hexadecimales de una extencion de 6 
+digitos . 
+se pretende conseguir todos los codigos posibles con un simple tateo o por medio de 
+fuerza bruta.
+
+para ello se requiere 
+
+Creas un programa que genere un codigo exadecima  acendente (numero y letras) 
+de 6 digitos por medio de un diccionario para luego
+
+hacer una llamada al archivos o donde esten los codigos y revisar si el codigo
+que se genera con el programa se encuentra dentro del archivo 
+
+en dando caso de encontrarse en el archivo el codigo debe ser almacenado 
+en un txt identificado  y todo los codigos usados en otro para poder ver la
+progrecion del codigo 
+
+
+se requiere crear una interface donde se pueda ver la generacion de codigos
+y si es posible ir viendo los codigos encontrasdos
+
+
+todo lo demas queda de parte del programador como quiere crear el codigo 
+
+
+
+
